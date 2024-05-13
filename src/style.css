@@ -33,6 +33,7 @@
 .repos-container,
 .reset {
   grid-column: span 2; 
+}
 
 .user-avatar {
     width: 150px;

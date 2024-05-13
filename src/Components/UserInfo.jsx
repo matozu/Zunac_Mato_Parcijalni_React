@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 function UserInfo({ user, repos, setUser, setInputValue }) {
   return (
     <>
-      {user && (
+      {user ? (
         <div className="user-info-container">
           <img
             src={user.avatar_url}
@@ -45,6 +45,10 @@ function UserInfo({ user, repos, setUser, setInputValue }) {
           >
             Reset
           </button>
+        </div>
+      ) : (
+        <div className="user-info-container">
+          <p>Username not found.</p>
         </div>
       )}
     </>
