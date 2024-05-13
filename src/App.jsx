@@ -22,7 +22,7 @@ function App() {
   
   return <div className="container">
   <InputForm setUser={setUser} inputValue={inputValue} setInputValue={setInputValue}></InputForm>
-  <UserInfo user={user} repos={repos} setUser={setUser} setInputValue={setInputValue}/>
+  <UserInfo user={user} repos={repos} setUser={setUser} setInputValue={setInputValue} inputValue={inputValue}/>
   </div>
   
   

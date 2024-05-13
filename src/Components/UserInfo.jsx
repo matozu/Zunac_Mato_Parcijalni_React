@@ -1,9 +1,13 @@
 import propTypes from "prop-types";
 
-function UserInfo({ user, repos, setUser, setInputValue }) {
+function UserInfo({ user, repos, setUser, inputValue, setInputValue }) {
   return (
+    
     <>
-      {user ? (
+    {!user && inputValue!=="" && (<div className="user-info-container">
+      <p>Username not found.</p>
+    </div>)} 
+      {user && (
         <div className="user-info-container">
           <img
             src={user.avatar_url}
@@ -46,10 +50,6 @@ function UserInfo({ user, repos, setUser, setInputValue }) {
             Reset
           </button>
         </div>
-      ) : (
-        <div className="user-info-container">
-          <p>Username not found.</p>
-        </div>
       )}
     </>
   );
@@ -57,6 +57,7 @@ function UserInfo({ user, repos, setUser, setInputValue }) {
 
 UserInfo.propTypes = {
   user: propTypes.object,
+  inputValue: propTypes.string,
   repos: propTypes.array,
   setUser: propTypes.func,
   setInputValue: propTypes.func,

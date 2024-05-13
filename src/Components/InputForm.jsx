@@ -26,6 +26,7 @@ function InputForm({setUser, inputValue, setInputValue}) {
     } catch (error) {
       console.log(error);
       setUser(null)
+      setInputValue(usernameInputRef.current.value)
     }
   }
 
