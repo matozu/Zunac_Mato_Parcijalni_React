@@ -26,17 +26,13 @@
     gap: 10px;
     grid-template-columns: 150px 1fr;
 }
-
-/* .user-info-container > * {
-  } */
   
 
 .user-bio,
 .user-location,
 .repos-container,
 .reset {
-  grid-column: span 2; /* Drugi i treći red: paragrafi zauzimaju obje kolone */
-}
+  grid-column: span 2; 
 
 .user-avatar {
     width: 150px;
