@@ -1,6 +1,7 @@
-import propTypes from "prop-types";
+import { useAppContext } from "./context";
 
-function UserInfo({ user, repos, setUser, setInputValue }) {
+function UserInfo() {
+  const { user, repos, setUser, setInputValue } = useAppContext()
   
   
   return (
@@ -50,12 +51,5 @@ function UserInfo({ user, repos, setUser, setInputValue }) {
     </>
   );
 }
-
-UserInfo.propTypes = {
-  user: propTypes.object,
-  repos: propTypes.array,
-  setUser: propTypes.func,
-  setInputValue: propTypes.func,
-};
 
 export default UserInfo;

@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
-import propTypes from "prop-types"
 import axios from "axios";
+import { useAppContext } from "./context";
 
-function InputForm({setUser, inputValue, setInputValue}) {
+function InputForm() {
 
+  const {setUser, inputValue, setInputValue} = useAppContext()
   const usernameInputRef = useRef();
-  
+
   useEffect(()=>{
     usernameInputRef.current.value=inputValue
   }, [inputValue])
@@ -43,12 +44,6 @@ function InputForm({setUser, inputValue, setInputValue}) {
       </form>
     </>
   );
-}
-
-InputForm.propTypes = {
-  setUser: propTypes.func.isRequired,
-  inputValue: propTypes.string,
-  setInputValue: propTypes.func
 }
 
 export default InputForm;
