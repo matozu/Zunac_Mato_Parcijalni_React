@@ -17,8 +17,7 @@ function App() {
       axios
         .get(user.repos_url)
         .then((response) => setRepos(response.data))
-        .catch((error) => console.log(error));
-    }
+        .catch((error) => console.log(error));    }
   }, [user])
   
   return <div className="container">

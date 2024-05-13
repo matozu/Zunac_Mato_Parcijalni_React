@@ -1,8 +1,6 @@
 import propTypes from "prop-types";
 
 function UserInfo({ user, repos, setUser, setInputValue }) {
-  
-  
   return (
     <>
       {user && (
@@ -12,14 +10,14 @@ function UserInfo({ user, repos, setUser, setInputValue }) {
             alt="user avatar"
             className="user-avatar"
           />
-          <span className="user-name">{user.name}</span>
+          <span className="user-name">{user.name ?? "(no name)"}</span>
           <p className="user-bio">
             <b>BIO: </b>
-            {user.bio}
+            {user.bio ?? "(no bio)"}
           </p>
           <p className="user-location">
             <b>LOCATION: </b>
-            {user.location}
+            {user.location ?? "(no location)"}
           </p>
           <div className="repos-container">
             <p>
@@ -30,7 +28,9 @@ function UserInfo({ user, repos, setUser, setInputValue }) {
               <ul>
                 {repos.map((repo) => (
                   <li key={repo.id} className="repo">
-                    {repo.name}
+                    <a href={repo.html_url} target="_blank">
+                      {repo.name}
+                    </a>
                   </li>
                 ))}
               </ul>
